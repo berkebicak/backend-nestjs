@@ -1,4 +1,6 @@
 import { AuditModel } from "./audit.model";
+import { GroupModel } from "./group.model";
+import { RoleModel } from "./role.model";
 
 export class UserModel{
     id: string;
@@ -7,6 +9,9 @@ export class UserModel{
     image: string;
     email: string;
     password: string;
-    passwordHash: string;
+    birthDay: Date;
     audit: AuditModel;
+    roles: RoleModel[];
+    groups: GroupModel[];
+
 }
