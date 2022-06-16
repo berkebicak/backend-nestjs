@@ -7,14 +7,16 @@ import {
   Put,
   Delete,
   UseFilters,
+  Query,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserCreateDto, UserUpdateDto } from 'tools/dtos/user.dto';
 import { UserModel } from 'tools/models/user.model';
-//import { AllExceptionFilter } from 'libs/filters/all-exception.filter';
+import { FilterModel } from 'tools/models/filter.model';
+// import { AllExceptionFilter } from 'libs/filters/all-exception.filter';
 
 @Controller('user')
-//@UseFilters(AllExceptionFilter) sadece bu endpointe giden exceptionları handle eder
+// @UseFilters(AllExceptionFilter) sadece bu endpointe giden exceptionları handle eder
 export class UserController {
   constructor(private userService: UserService) {}
 
@@ -24,8 +26,8 @@ export class UserController {
   }
 
   @Get()
-  async getAllUsers(): Promise<UserModel[]> {
-    return await this.userService.findAll();
+  async getAllUsers(@Query() query: FilterModel): Promise<UserModel[]> {
+    return await this.userService.findAll(query);
   }
 
   @Get(':id')
