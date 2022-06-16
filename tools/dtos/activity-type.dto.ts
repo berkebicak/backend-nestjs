@@ -1,6 +1,6 @@
-import { AuditDto } from "./audit.dto";
+import { AuditDto } from './audit.dto';
 
-export class ActivityTypeDto{
-    name: string;
-    audit: AuditDto;
+export class ActivityTypeDto {
+  name: string;
+  audit: AuditDto;
 }
