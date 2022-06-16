@@ -10,7 +10,7 @@ export class ResourceService<T extends any, C extends any, U extends any> {
     audit.createdBy = 'Admin';
     audit.createdDate = new Date();
 
-    const createdModel = new this.mongoModel({ ...model, ...audit });
+    const createdModel = new this.mongoModel({ ...model as {}, ...audit });
 
     return await createdModel.save();
   }
@@ -20,7 +20,7 @@ export class ResourceService<T extends any, C extends any, U extends any> {
   }
 
   async findOne(id: string): Promise<T> {
-    return await this.mongoModel.find({ _id: id }).exec();
+    return await this.mongoModel.findOne({ _id: id }).exec();
   }
 
   async delete(id: string): Promise<T> {
@@ -29,7 +29,7 @@ export class ResourceService<T extends any, C extends any, U extends any> {
 
   async update(id: string, dto: U): Promise<T> {
     let newModel = this.mongoModel.findOne({ _id: id }).exec();
-    newModel = { ...newModel, ...dto };
+    newModel = { ...newModel, ...dto as {}  };
 
     return await this.mongoModel
       .findByIdAndUpdate(id, newModel, { new: true })
