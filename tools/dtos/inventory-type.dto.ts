@@ -1,3 +1,3 @@
-export class InventoryTypeDto{
-    name: string;
+export class InventoryTypeDto {
+  name: string;
 }

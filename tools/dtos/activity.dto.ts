@@ -1,3 +1,3 @@
-export class ActivityDto{
-    name: string;
+export class ActivityDto {
+  name: string;
 }

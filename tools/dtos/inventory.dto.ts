@@ -1,4 +1,4 @@
-export class InventoryDto{
-    barcode: number;
-    description: string;
+export class InventoryDto {
+  barcode: number;
+  description: string;
 }

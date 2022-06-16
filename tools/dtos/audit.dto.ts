@@ -1,7 +1,7 @@
-export class AuditDto{
-    createDate: Date;
+export class AuditDto {
+    createdDate: Date;
     createdBy: string;
-    lastmodifiedDate: string;
+    lastmodifiedDate: Date;
     lastmodifiedBy: string;
     active: boolean;
-}
+  }

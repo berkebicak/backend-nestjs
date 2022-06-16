@@ -1,3 +1,3 @@
-export class TicketTypeDto{
-    name: string;
+export class TicketTypeDto {
+  name: string;
 }
