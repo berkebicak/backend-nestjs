@@ -10,11 +10,10 @@ import { UserModel } from 'tools/models/user.model';
 const result: UserModel[] = []
 
 @Injectable()
-export class UserService extends ResourceService<UserModel,UserCreateDto,UserUpdateDto> {
+export class UserService extends ResourceService<UserModel, UserCreateDto,UserUpdateDto> {
 
-    constructor(@InjectModel('User') userMongo: Model<UserModel>)
-    {
-        super (userMongo)
+    constructor(@InjectModel('User') userMongo: Model<UserModel>) {
+        super (userMongo);
     }
 
    /* getAllUsers() : UserModel[]{
